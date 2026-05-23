@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jean Cassaigne — A Life Given Away (1895–1973)</title>
+  <meta name="description" content="Interactive timeline of Bishop Jean Cassaigne MEP — missionary, leper bishop, Servant of God." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════════════════════════ */
+    :root,
+    [data-theme="light"] {
+      /* Palette: aged parchment, incense smoke, mission red, jungle canopy */
+      --color-bg:              #f5f0e8;
+      --color-surface:         #faf6ed;
+      --color-surface-2:       #fdfbf6;
+      --color-surface-offset:  #ede7d6;
+      --color-divider:         #d9cfba;
+      --color-border:          #c8bfa8;
+
+      --color-text:            #2a2118;
+      --color-text-muted:      #6b5c42;
+      --color-text-faint:      #a89878;
+      --color-text-inverse:    #faf6ed;
+
+      /* Primary: deep mission red (vermillion cross) */
+      --color-primary:         #8b2020;
+      --color-primary-hover:   #6e1818;
+      --color-primary-active:  #521010;
+      --color-primary-highlight: #e8d0cc;
+
+      /* Accent: highland forest green */
+      --color-accent:          #3d6b4a;
+      --color-accent-hover:    #2e5238;
+      --color-accent-highlight: #c8dece;
+
+      /* Gold: candlelight */
+      --color-gold:            #b8860b;
+      --color-gold-light:      #f0d080;
+
+      /* Chapter color bands */
+      --chapter-france:        #4a5568;
+      --chapter-france-bg:     #e8eaf0;
+      --chapter-vietnam:       #3d6b4a;
+      --chapter-vietnam-bg:    #ddeae2;
+      --chapter-bishop:        #8b2020;
+      --chapter-bishop-bg:     #f0dada;
+      --chapter-leper:         #7a5c2a;
+      --chapter-leper-bg:      #ede0c8;
+      --chapter-beatification: #4a3070;
+      --chapter-beatification-bg: #e2dcf0;
+
+      --radius-sm:   0.375rem;
+      --radius-md:   0.5rem;
+      --radius-lg:   0.75rem;
+      --radius-xl:   1rem;
+      --radius-full: 9999px;
+
+      --shadow-sm:  0 1px 3px rgba(42, 33, 24, 0.08);
+      --shadow-md:  0 4px 14px rgba(42, 33, 24, 0.10);
+      --shadow-lg:  0 12px 36px rgba(42, 33, 24, 0.14);
+
+      --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(2.5rem, 1rem + 5vw, 5.5rem);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --font-display: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body:    'Crimson Pro', 'Georgia', serif;
+      --font-ui:      'Switzer', 'Helvetica Neue', sans-serif;
+
+      --content-narrow:  640px;
+      --content-default: 920px;
+      --content-wide:    1140px;
+    }
+
+    [data-theme="dark"] {
+      --color-bg:              #1a1510;
+      --color-surface:         #211c15;
+      --color-surface-2:       #272019;
+      --color-surface-offset:  #1e1912;
+      --color-divider:         #342d22;
+      --color-border:          #443a2c;
+
+      --color-text:            #e8dfc8;
+      --color-text-muted:      #9e8f72;
+      --color-text-faint:      #665a44;
+      --color-text-inverse:    #1a1510;
+
+      --color-primary:         #d96060;
+      --color-primary-hover:   #e87878;
+      --color-primary-active:  #f09090;
+      --color-primary-highlight: #4a2424;
+
+      --color-accent:          #6aaa7e;
+      --color-accent-hover:    #7ec495;
+      --color-accent-highlight: #1e3428;
+
+      --color-gold:            #d4a844;
+      --color-gold-light:      #8a6820;
+
+      --chapter-france:        #8899bb;
+      --chapter-france-bg:     #1e2235;
+      --chapter-vietnam:       #6aaa7e;
+      --chapter-vietnam-bg:    #182a1e;
+      --chapter-bishop:        #d96060;
+      --chapter-bishop-bg:     #301818;
+      --chapter-leper:         #c4a060;
+      --chapter-leper-bg:      #281e10;
+      --chapter-beatification: #a088d8;
+      --chapter-beatification-bg: #221840;
+
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.3);
+      --shadow-md:  0 4px 14px rgba(0,0,0,0.4);
+      --shadow-lg:  0 12px 36px rgba(0,0,0,0.5);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --color-bg:              #1a1510;
+        --color-surface:         #211c15;
+        --color-surface-2:       #272019;
+        --color-surface-offset:  #1e1912;
+        --color-divider:         #342d22;
+        --color-border:          #443a2c;
+        --color-text:            #e8dfc8;
+        --color-text-muted:      #9e8f72;
+        --color-text-faint:      #665a44;
+        --color-text-inverse:    #1a1510;
+        --color-primary:         #d96060;
+        --color-primary-hover:   #e87878;
+        --color-primary-highlight: #4a2424;
+        --color-accent:          #6aaa7e;
+        --color-gold:            #d4a844;
+        --color-gold-light:      #8a6820;
+        --chapter-france:        #8899bb;
+        --chapter-france-bg:     #1e2235;
+        --chapter-vietnam:       #6aaa7e;
+        --chapter-vietnam-bg:    #182a1e;
+        --chapter-bishop:        #d96060;
+        --chapter-bishop-bg:     #301818;
+        --chapter-leper:         #c4a060;
+        --chapter-leper-bg:      #281e10;
+        --chapter-beatification: #a088d8;
+        --chapter-beatification-bg: #221840;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BASE RESET
+    ═══════════════════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-20);
+      hanging-punctuation: first last;
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+    a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; transition: color var(--transition); }
+    a:hover { color: var(--color-primary-hover); }
+    h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; }
+    p, li { text-wrap: pretty; max-width: 72ch; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HEADER / NAV
+    ═══════════════════════════════════════════════════════════ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: color-mix(in srgb, var(--color-surface) 95%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-3) var(--space-6);
+    }
+    .header-inner {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none;
+      color: var(--color-text);
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .logo-sub {
+      display: block;
+      font-size: var(--text-xs);
+      font-family: var(--font-ui);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .chapter-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .chapter-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border: 1px solid transparent;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+    .chapter-nav-btn:hover {
+      background: var(--color-surface-offset);
+    }
+    .chapter-nav-btn.active {
+      border-color: currentColor;
+    }
+    .chapter-nav-btn[data-chapter="france"]         { color: var(--chapter-france); }
+    .chapter-nav-btn[data-chapter="vietnam"]        { color: var(--chapter-vietnam); }
+    .chapter-nav-btn[data-chapter="bishop"]         { color: var(--chapter-bishop); }
+    .chapter-nav-btn[data-chapter="leper"]          { color: var(--chapter-leper); }
+    .chapter-nav-btn[data-chapter="beatification"]  { color: var(--chapter-beatification); }
+
+    .theme-toggle {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-full);
+      color: var(--color-text-muted);
+      transition: background var(--transition), color var(--transition);
+    }
+    .theme-toggle:hover { background: var(--color-surface-offset); color: var(--color-text); }
+
+    @media (max-width: 768px) {
+      .chapter-nav { display: none; }
+      .logo-text { font-size: var(--text-base); }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(var(--space-16), 10vw, var(--space-24)) var(--space-6);
+      text-align: center;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .hero-ornament {
+      position: absolute;
+      inset: 0;
+      opacity: 0.045;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+    .hero-title {
+      font-size: var(--text-hero);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      line-height: 1.05;
+      margin-bottom: var(--space-3);
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+    .hero-dates {
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+    }
+    .hero-desc {
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--color-text-muted);
+      max-width: 52ch;
+      margin: 0 auto var(--space-8);
+      line-height: 1.55;
+    }
+    .hero-motto {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--color-primary);
+      background: var(--color-surface-2);
+    }
+    .hero-motto span { color: var(--color-text-faint); font-weight: 400; }
+
+    /* ═══════════════════════════════════════════════════════════
+       CHAPTER TABS / FILTERS
+    ═══════════════════════════════════════════════════════════ */
+    .chapter-filter {
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-4) var(--space-6);
+      position: sticky;
+      top: 57px;
+      z-index: 90;
+    }
+    .chapter-filter-inner {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .chapter-filter-inner::-webkit-scrollbar { display: none; }
+    .chapter-pill {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .chapter-pill:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+    .chapter-pill.active { color: var(--color-text-inverse); border-color: transparent; }
+    .chapter-pill[data-filter="all"].active       { background: var(--color-text); }
+    .chapter-pill[data-filter="france"].active    { background: var(--chapter-france); border-color: var(--chapter-france); }
+    .chapter-pill[data-filter="vietnam"].active   { background: var(--chapter-vietnam); border-color: var(--chapter-vietnam); }
+    .chapter-pill[data-filter="bishop"].active    { background: var(--chapter-bishop); border-color: var(--chapter-bishop); }
+    .chapter-pill[data-filter="leper"].active     { background: var(--chapter-leper); border-color: var(--chapter-leper); }
+    .chapter-pill[data-filter="beatification"].active { background: var(--chapter-beatification); border-color: var(--chapter-beatification); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-france        { background: var(--chapter-france); }
+    .dot-vietnam       { background: var(--chapter-vietnam); }
+    .dot-bishop        { background: var(--chapter-bishop); }
+    .dot-leper         { background: var(--chapter-leper); }
+    .dot-beatification { background: var(--chapter-beatification); }
+
+    /* ═══════════════════════════════════════════════════════════
+       TIMELINE CONTAINER
+    ═══════════════════════════════════════════════════════════ */
+    .timeline-section {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      padding: var(--space-16) var(--space-6) var(--space-24);
+    }
+    .chapter-block {
+      margin-bottom: var(--space-20);
+      transition: opacity 0.4s ease;
+    }
+    .chapter-block.hidden {
+      display: none;
+    }
+    .chapter-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-5);
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-6);
+      border-bottom: 2px solid;
+    }
+    .chapter-header[data-chapter="france"]        { border-color: var(--chapter-france); }
+    .chapter-header[data-chapter="vietnam"]       { border-color: var(--chapter-vietnam); }
+    .chapter-header[data-chapter="bishop"]        { border-color: var(--chapter-bishop); }
+    .chapter-header[data-chapter="leper"]         { border-color: var(--chapter-leper); }
+    .chapter-header[data-chapter="beatification"] { border-color: var(--chapter-beatification); }
+
+    .chapter-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 700;
+      line-height: 1;
+      opacity: 0.12;
+      flex-shrink: 0;
+      width: 80px;
+      text-align: right;
+    }
+    .chapter-header[data-chapter="france"]        .chapter-num { color: var(--chapter-france); }
+    .chapter-header[data-chapter="vietnam"]       .chapter-num { color: var(--chapter-vietnam); }
+    .chapter-header[data-chapter="bishop"]        .chapter-num { color: var(--chapter-bishop); }
+    .chapter-header[data-chapter="leper"]         .chapter-num { color: var(--chapter-leper); }
+    .chapter-header[data-chapter="beatification"] .chapter-num { color: var(--chapter-beatification); }
+
+    .chapter-meta { flex: 1; }
+    .chapter-label {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+    }
+    .chapter-header[data-chapter="france"]        .chapter-label { color: var(--chapter-france); }
+    .chapter-header[data-chapter="vietnam"]       .chapter-label { color: var(--chapter-vietnam); }
+    .chapter-header[data-chapter="bishop"]        .chapter-label { color: var(--chapter-bishop); }
+    .chapter-header[data-chapter="leper"]         .chapter-label { color: var(--chapter-leper); }
+    .chapter-header[data-chapter="beatification"] .chapter-label { color: var(--chapter-beatification); }
+
+    .chapter-title {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-2);
+    }
+    .chapter-range {
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       TIMELINE SPINE + EVENTS
+    ═══════════════════════════════════════════════════════════ */
+    .timeline {
+      position: relative;
+      padding-left: clamp(48px, 8vw, 88px);
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: clamp(20px, 3.5vw, 36px);
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--color-divider) 5%,
+        var(--color-divider) 95%,
+        transparent
+      );
+    }
+    .event {
+      position: relative;
+      margin-bottom: var(--space-8);
+      opacity: 0;
+      transform: translateX(16px);
+      animation: fadeIn 0.5s ease forwards;
+    }
+    .event:nth-child(1)  { animation-delay: 0.05s; }
+    .event:nth-child(2)  { animation-delay: 0.1s; }
+    .event:nth-child(3)  { animation-delay: 0.15s; }
+    .event:nth-child(4)  { animation-delay: 0.2s; }
+    .event:nth-child(5)  { animation-delay: 0.25s; }
+    .event:nth-child(6)  { animation-delay: 0.3s; }
+    .event:nth-child(7)  { animation-delay: 0.35s; }
+    .event:nth-child(8)  { animation-delay: 0.4s; }
+    .event:nth-child(9)  { animation-delay: 0.45s; }
+    .event:nth-child(10) { animation-delay: 0.5s; }
+    .event:nth-child(n+11) { animation-delay: 0.55s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .event-node {
+      position: absolute;
+      left: clamp(-36px, -6vw, -56px);
+      top: 16px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .node-ring {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid;
+      background: var(--color-bg);
+      transition: transform var(--transition);
+    }
+    .event:hover .node-ring { transform: scale(1.4); }
+    [data-chapter="france"]        .node-ring { border-color: var(--chapter-france); }
+    [data-chapter="vietnam"]       .node-ring { border-color: var(--chapter-vietnam); }
+    [data-chapter="bishop"]        .node-ring { border-color: var(--chapter-bishop); }
+    [data-chapter="leper"]         .node-ring { border-color: var(--chapter-leper); }
+    [data-chapter="beatification"] .node-ring { border-color: var(--chapter-beatification); }
+
+    .event.milestone .node-ring {
+      width: 18px; height: 18px;
+      border-width: 3px;
+    }
+    .event.milestone .node-ring::after {
+      content: '';
+      position: absolute;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    [data-chapter="france"].milestone        .node-ring::after { background: var(--chapter-france); }
+    [data-chapter="vietnam"].milestone       .node-ring::after { background: var(--chapter-vietnam); }
+    [data-chapter="bishop"].milestone        .node-ring::after { background: var(--chapter-bishop); }
+    [data-chapter="leper"].milestone         .node-ring::after { background: var(--chapter-leper); }
+    [data-chapter="beatification"].milestone .node-ring::after { background: var(--chapter-beatification); }
+
+    .event-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-6);
+      cursor: pointer;
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .event-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    [data-chapter="france"]        .event-card::before { background: var(--chapter-france); }
+    [data-chapter="vietnam"]       .event-card::before { background: var(--chapter-vietnam); }
+    [data-chapter="bishop"]        .event-card::before { background: var(--chapter-bishop); }
+    [data-chapter="leper"]         .event-card::before { background: var(--chapter-leper); }
+    [data-chapter="beatification"] .event-card::before { background: var(--chapter-beatification); }
+
+    .event-card:hover,
+    .event-card:focus-visible {
+      box-shadow: var(--shadow-md);
+      transform: translateX(4px);
+      border-color: var(--color-text-faint);
+    }
+    .event-card:hover::before,
+    .event-card:focus-visible::before { opacity: 1; }
+    .event-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+    .event.open .event-card {
+      border-color: var(--color-text-faint);
+      box-shadow: var(--shadow-md);
+    }
+    .event.open .event-card::before { opacity: 1; }
+
+    .event-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      justify-content: space-between;
+    }
+    .event-left { flex: 1; }
+    .event-date {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+    }
+    [data-chapter="france"]        .event-date { color: var(--chapter-france); }
+    [data-chapter="vietnam"]       .event-date { color: var(--chapter-vietnam); }
+    [data-chapter="bishop"]        .event-date { color: var(--chapter-bishop); }
+    [data-chapter="leper"]         .event-date { color: var(--chapter-leper); }
+    [data-chapter="beatification"] .event-date { color: var(--chapter-beatification); }
+
+    .event-title {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-1);
+    }
+    .event-subtitle {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+    .event-chevron {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      margin-top: var(--space-1);
+      color: var(--color-text-faint);
+      transition: transform var(--transition), color var(--transition);
+    }
+    .event.open .event-chevron { transform: rotate(180deg); color: var(--color-text-muted); }
+
+    .event-body {
+      display: none;
+      margin-top: var(--space-4);
+      padding-top: var(--space-4);
+      border-top: 1px solid var(--color-divider);
+    }
+    .event.open .event-body { display: block; }
+    .event-body p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: var(--space-3);
+    }
+    .event-body p:last-child { margin-bottom: 0; }
+
+    .event-quote {
+      margin: var(--space-4) 0;
+      padding: var(--space-4) var(--space-5);
+      border-left: 3px solid;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--color-text);
+    }
+    [data-chapter="france"]        .event-quote { border-color: var(--chapter-france); background: var(--chapter-france-bg); }
+    [data-chapter="vietnam"]       .event-quote { border-color: var(--chapter-vietnam); background: var(--chapter-vietnam-bg); }
+    [data-chapter="bishop"]        .event-quote { border-color: var(--chapter-bishop); background: var(--chapter-bishop-bg); }
+    [data-chapter="leper"]         .event-quote { border-color: var(--chapter-leper); background: var(--chapter-leper-bg); }
+    [data-chapter="beatification"] .event-quote { border-color: var(--chapter-beatification); background: var(--chapter-beatification-bg); }
+
+    .event-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .tag {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 2px var(--space-3);
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      background: var(--color-surface-2);
+    }
+
+    /* Milestone badge */
+    .milestone-badge {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-4);
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px var(--space-3);
+      border-radius: var(--radius-full);
+      color: var(--color-text-inverse);
+      opacity: 0.8;
+    }
+    [data-chapter="france"].milestone        .milestone-badge { background: var(--chapter-france); }
+    [data-chapter="vietnam"].milestone       .milestone-badge { background: var(--chapter-vietnam); }
+    [data-chapter="bishop"].milestone        .milestone-badge { background: var(--chapter-bishop); }
+    [data-chapter="leper"].milestone         .milestone-badge { background: var(--chapter-leper); }
+    [data-chapter="beatification"].milestone .milestone-badge { background: var(--chapter-beatification); }
+
+    /* ═══════════════════════════════════════════════════════════
+       STAT BAR / OVERVIEW
+    ═══════════════════════════════════════════════════════════ */
+    .overview-bar {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-divider);
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-8) var(--space-6);
+    }
+    .overview-inner {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-6);
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    .stat-label {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+    .stat-divider {
+      width: 1px;
+      background: var(--color-divider);
+      align-self: stretch;
+    }
+    @media (max-width: 600px) { .stat-divider { display: none; } }
+
+    /* ═══════════════════════════════════════════════════════════
+       BEATIFICATION STATUS CARD
+    ═══════════════════════════════════════════════════════════ */
+    .status-card {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      background: var(--chapter-beatification-bg);
+      border: 1.5px solid var(--chapter-beatification);
+    }
+    .status-card h4 {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: var(--space-3);
+      color: var(--chapter-beatification);
+    }
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .step-indicator.done { background: var(--chapter-beatification); color: var(--color-text-inverse); }
+    .step-indicator.active { background: var(--color-gold); color: #1a1510; }
+    .step-indicator.pending { background: var(--color-border); color: var(--color-text-muted); }
+    .step-text strong { font-weight: 600; color: var(--color-text); }
+    .step-text small { color: var(--color-text-muted); font-size: var(--text-sm); }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════════ */
+    .site-footer {
+      border-top: 1px solid var(--color-divider);
+      background: var(--color-surface);
+      padding: var(--space-12) var(--space-6);
+    }
+    .footer-inner {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4);
+      text-align: center;
+    }
+    .footer-cross {
+      color: var(--color-primary);
+      opacity: 0.6;
+    }
+    .footer-title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: var(--color-text-muted);
+    }
+    .footer-tomb {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+    }
+    .footer-sources {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      line-height: 1.8;
+    }
+    .footer-sources a { color: var(--color-text-faint); }
+    .footer-sources a:hover { color: var(--color-text-muted); }
+
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE ADJUSTMENTS
+    ═══════════════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      .timeline { padding-left: 36px; }
+      .timeline::before { left: 14px; }
+      .event-node { left: -28px; }
+      .chapter-num { display: none; }
+      .event-card { padding: var(--space-4); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="#">
+      <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cross and lotus mark">
+        <!-- Vertical bar -->
+        <rect x="16.5" y="4" width="3" height="28" rx="1.5" fill="var(--color-primary)" opacity="0.9"/>
+        <!-- Horizontal bar -->
+        <rect x="8" y="12" width="20" height="3" rx="1.5" fill="var(--color-primary)" opacity="0.9"/>
+        <!-- Small decorative leaf left -->
+        <ellipse cx="9" cy="24" rx="4" ry="2" transform="rotate(-35 9 24)" fill="var(--color-accent)" opacity="0.5"/>
+        <!-- Small decorative leaf right -->
+        <ellipse cx="27" cy="24" rx="4" ry="2" transform="rotate(35 27 24)" fill="var(--color-accent)" opacity="0.5"/>
+      </svg>
+      <div>
+        <span class="logo-text">Jean Cassaigne</span>
+        <span class="logo-sub">Missionary · Bishop · Servant of God</span>
+      </div>
+    </a>
+    <div class="header-controls">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <svg class="hero-ornament" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background botanical / geometric pattern -->
+    <circle cx="400" cy="200" r="180" stroke="currentColor" stroke-width="1" fill="none"/>
+    <circle cx="400" cy="200" r="140" stroke="currentColor" stroke-width="0.5" fill="none"/>
+    <circle cx="400" cy="200" r="100" stroke="currentColor" stroke-width="1" fill="none"/>
+    <line x1="400" y1="20" x2="400" y2="380" stroke="currentColor" stroke-width="0.5"/>
+    <line x1="220" y1="200" x2="580" y2="200" stroke="currentColor" stroke-width="0.5"/>
+    <line x1="272" y1="72" x2="528" y2="328" stroke="currentColor" stroke-width="0.5"/>
+    <line x1="528" y1="72" x2="272" y2="328" stroke="currentColor" stroke-width="0.5"/>
+    <!-- Petal shapes -->
+    <ellipse cx="400" cy="100" rx="18" ry="60" fill="currentColor" opacity="0.4"/>
+    <ellipse cx="400" cy="300" rx="18" ry="60" fill="currentColor" opacity="0.4"/>
+    <ellipse cx="300" cy="200" rx="60" ry="18" fill="currentColor" opacity="0.4"/>
+    <ellipse cx="500" cy="200" rx="60" ry="18" fill="currentColor" opacity="0.4"/>
+    <!-- Decorative cross in center -->
+    <rect x="394" y="172" width="12" height="56" rx="3" fill="currentColor" opacity="0.6"/>
+    <rect x="376" y="190" width="48" height="12" rx="3" fill="currentColor" opacity="0.6"/>
+  </svg>
+
+  <p class="hero-eyebrow">Interactive Biography</p>
+  <h1 class="hero-title"><em>Jean Cassaigne</em></h1>
+  <p class="hero-dates">30 January 1895 — 31 October 1973</p>
+  <p class="hero-desc">
+    Soldier, priest, missionary, bishop — and finally leper among lepers.
+    A Gascon who gave his life to the K'Ho people of the Vietnamese highlands.
+  </p>
+  <div class="hero-motto">
+    <span>✦</span>
+    Caritas et Amor
+    <span>✦</span>
+  </div>
+</section>
+
+<!-- ═══════ STATS BAR ═══════ -->
+<div class="overview-bar">
+  <div class="overview-inner">
+    <div class="stat-item">
+      <div class="stat-num" style="color: var(--chapter-france);">78</div>
+      <div class="stat-label">Years of life</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num" style="color: var(--chapter-vietnam);">47</div>
+      <div class="stat-label">Years in Vietnam</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num" style="color: var(--chapter-leper);">44</div>
+      <div class="stat-label">Years serving lepers</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num" style="color: var(--chapter-bishop);">14</div>
+      <div class="stat-label">Years as bishop</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num" style="color: var(--chapter-beatification);">18</div>
+      <div class="stat-label">Years living with leprosy</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ CHAPTER FILTER ═══════ -->
+<div class="chapter-filter" role="navigation" aria-label="Filter by chapter">
+  <div class="chapter-filter-inner">
+    <button class="chapter-pill active" data-filter="all">All Chapters</button>
+    <button class="chapter-pill" data-filter="france"><span class="dot dot-france"></span>France &amp; Formation</button>
+    <button class="chapter-pill" data-filter="vietnam"><span class="dot dot-vietnam"></span>Vietnam Mission</button>
+    <button class="chapter-pill" data-filter="bishop"><span class="dot dot-bishop"></span>Vicar Apostolic</button>
+    <button class="chapter-pill" data-filter="leper"><span class="dot dot-leper"></span>Bishop of Lepers</button>
+    <button class="chapter-pill" data-filter="beatification"><span class="dot dot-beatification"></span>Beatification</button>
+  </div>
+</div>
+
+<!-- ═══════ TIMELINE ═══════ -->
+<main class="timeline-section" id="timeline">
+
+  <!-- CHAPTER I: FRANCE & FORMATION -->
+  <section class="chapter-block" data-chapter="france" id="chapter-france">
+    <div class="chapter-header" data-chapter="france">
+      <div class="chapter-num">I</div>
+      <div class="chapter-meta">
+        <div class="chapter-label">Chapter One</div>
+        <h2 class="chapter-title">France &amp; Formation</h2>
+        <div class="chapter-range">1895 – 1925 · Landes, Spain, Saint-Lô, Paris</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="event milestone" data-chapter="france" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Birth</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">30 January 1895</div>
+              <h3 class="event-title">Born in Grenade-sur-l'Adour</h3>
+              <p class="event-subtitle">Landes, Diocese of Aire et Dax, France</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Marie Pierre Jean Cassaigne was born at 25 rue des Capucins to Joseph Cassaigne, a prosperous wine merchant and landowner, and Anne-Marie Darthos (Nelly). He was their only child. The family worshipped at the church of Saint-Pierre-et-Saint-Paul, and Jean felt the first stirrings of a religious vocation very early.</p>
+            <p>When Jean was twelve years old, his mother died of tuberculosis — the same disease that would later haunt him in Vietnam. His father, hoping his son would inherit the family business, remained skeptical of the boy's priestly calling for years.</p>
+            <div class="event-tags">
+              <span class="tag">Landes, France</span>
+              <span class="tag">Only child</span>
+              <span class="tag">Wine merchant family</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="france" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">c. 1905–1911</div>
+              <h3 class="event-title">Schooling in San Sebastián, Spain</h3>
+              <p class="event-subtitle">Collège San Bernardo · Brothers of the Christian Schools</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Anti-clerical laws passed by the French Third Republic in 1905 expelled religious teaching orders from France. The Brothers of the Christian Schools took refuge across the border in Spain, and Jean's father sent him to study in the commercial section of their college in San Sebastián — hoping a business curriculum would steer the boy away from the priesthood.</p>
+            <p>Jean proved to be a lively, even unruly pupil. In 1911, he was expelled for what his biographers delicately described as "excelling in organized rowdiness." He returned to Grenade-sur-l'Adour at sixteen and worked briefly in his father's wine trade.</p>
+            <div class="event-tags">
+              <span class="tag">San Sebastián</span>
+              <span class="tag">Brothers of the Christian Schools</span>
+              <span class="tag">Anti-clerical laws of 1905</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="france" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1913</div>
+              <h3 class="event-title">Apostolic College of Saint-Lô</h3>
+              <p class="event-subtitle">Institut Catholique · Manche, Normandy</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>After two years helping his father and feeling the pull of a missionary vocation ever more strongly, Jean's father finally relented. In 1913, at eighteen, Jean entered the apostolic college at Saint-Lô — an institution designed to prepare "late vocations" for the priesthood. His formation there would be interrupted almost immediately by the outbreak of world war.</p>
+            <div class="event-tags">
+              <span class="tag">Late vocation</span>
+              <span class="tag">Normandy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event milestone" data-chapter="france" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">War</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1914–1919</div>
+              <h3 class="event-title">First World War — Cyclist Liaison, 6th Dragoons</h3>
+              <p class="event-subtitle">Somme, Verdun, Compiègne, Coucy-le-Château</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Enlisted as a volunteer at nineteen, Cassaigne served on the bloodiest sectors of the Western Front. He became a bicycle dispatch rider for the staff of the 6th Dragoons — pedaling through the shattered roads of the Somme and later Verdun, carrying messages between rear barracks and the most forward command posts. He also served as an orderly and learned the rudiments of caring for the sick.</p>
+            <p>In September 1918, he waded for three days through a flooded trench and was struck with fever, evacuated first to the hospital at Provins and then to Tarbes, where he heard news of the Armistice on 11 November 1918. He was decorated with the Croix de Guerre and mentioned in the orders of the 6th Dragoons.</p>
+            <div class="event-quote">
+              "The lines are barely a hundred kilometers from Paris — and I pedaled on the rotten roads of the front."
+            </div>
+            <div class="event-tags">
+              <span class="tag">Croix de Guerre</span>
+              <span class="tag">Orderly / nurse</span>
+              <span class="tag">Cyclist dispatch</span>
+              <span class="tag">Demobilized 1919</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="france" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1919–1925</div>
+              <h3 class="event-title">Seminary of the Foreign Missions, Paris</h3>
+              <p class="event-subtitle">Séminaire des Missions Étrangères de Paris · Rue du Bac</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Demobilized in 1919, Cassaigne returned to Saint-Lô to finish his preliminary studies before entering the renowned Séminaire des Missions Étrangères de Paris (MEP) on the rue du Bac in 1920 — the very house from which generations of martyred missionaries to Asia had departed.</p>
+            <p>He was admitted as an aspirant on 7 September 1920, ordained deacon on 6 June 1925, and ordained priest on 19 December 1925 by Monseigneur de Guébriant, Superior General of the Foreign Missions. He returned to Grenade-sur-l'Adour to celebrate one of his first Masses — a reconciliation with his father, who was by then proud of his son.</p>
+            <div class="event-tags">
+              <span class="tag">MEP (Missions Étrangères de Paris)</span>
+              <span class="tag">Rue du Bac, Paris</span>
+              <span class="tag">Ordained 19 December 1925</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHAPTER II: VIETNAM MISSION -->
+  <section class="chapter-block" data-chapter="vietnam" id="chapter-vietnam">
+    <div class="chapter-header" data-chapter="vietnam">
+      <div class="chapter-num">II</div>
+      <div class="chapter-meta">
+        <div class="chapter-label">Chapter Two</div>
+        <h2 class="chapter-title">Into the Vietnamese Highlands</h2>
+        <div class="chapter-range">1926 – 1940 · Saigon, Caimon, Di Linh (Djiring)</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="event milestone" data-chapter="vietnam" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Departure</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">6 April 1926</div>
+              <h3 class="event-title">Embarks for Indochina</h3>
+              <p class="event-subtitle">Marseille → Saigon aboard the <em>D'Artagnan</em></p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Just four months after ordination, Cassaigne received his destination: the Mission of Saigon, in French Indochina. He embarked from Marseille aboard the steamship <em>D'Artagnan</em>, arriving in Saigon where he was received by Bishop Dumortier. He was sent first to Caimon, near Mytho in the Mekong Delta, to learn Vietnamese under the guidance of an experienced missionary.</p>
+            <p>He took the Vietnamese name <strong>Gioan Sanh</strong> (John of life/birth). Vietnamese, with its tonal complexity, surprised Westerners — Cassaigne mastered it quickly and soon sought a mission beyond catechumenal parishes, among those who had never heard the Gospel.</p>
+            <div class="event-tags">
+              <span class="tag">Caimon, Mekong Delta</span>
+              <span class="tag">Vietnamese: Gioan Sanh</span>
+              <span class="tag">MEP Mission of Saigon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event milestone" data-chapter="vietnam" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Di Linh</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">24 January 1927</div>
+              <h3 class="event-title">Arrives at Djiring (Di Linh)</h3>
+              <p class="event-subtitle">Central Highlands, 170 km northeast of Saigon</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Bishop Dumortier sent Cassaigne to establish a mission in the highland plateau region separating Cochinchina from Cambodia — a land so remote that maps left it blank with the annotation "wild lands." His parish center was a hamlet called Djiring, known today as Di Linh, in the province of Lâm Đồng near Đà Lạt.</p>
+            <p>The indigenous K'Ho people (also called Koho, or derogatorily "Moï" by the French) had never had a missionary who spoke their language. Cassaigne began learning it from the children, who became his teachers. He published a K'Ho–French–Vietnamese dictionary in 1929 and a grammar of customs in 1937 — creating the first written script for the language.</p>
+            <div class="event-quote">
+              "Foreseeable difficulties do not frighten me. Suffering does not prevent one from being happy."
+            </div>
+            <div class="event-tags">
+              <span class="tag">K'Ho people</span>
+              <span class="tag">Language pioneer</span>
+              <span class="tag">Di Linh / Djiring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="vietnam" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">7 December 1927</div>
+              <h3 class="event-title">Baptizes Ka Trut — First K'Ho Christian</h3>
+              <p class="event-subtitle">A dying leprosy patient becomes the seed of the mission</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Cassaigne had been providing basic medicine and food to leprosy patients who came to his home. One day a woman named Ka Trut did not return for her regular care. Searching for her, he found her dying alone in an abandoned log cabin in the forest — expelled by her family and village out of fear of contagion.</p>
+            <p>He ran to fetch water, translated the Lord's Prayer into K'Ho on the spot, and baptized her with the name Maria. She died the following day, December 8, the feast of the Immaculate Conception. He dug her grave himself. Her words — "I will remember you when I am in heaven" — became the spiritual foundation of the Di Linh leprosarium.</p>
+            <div class="event-quote">
+              "Unable to heal seriously ill bodies, Father Cassaigne soothes hearts and heals souls."
+            </div>
+            <div class="event-tags">
+              <span class="tag">First K'Ho baptism</span>
+              <span class="tag">Feast of the Immaculate Conception</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event milestone" data-chapter="vietnam" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Foundation</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">17 February 1929</div>
+              <h3 class="event-title">Founds the Di Linh Leprosarium</h3>
+              <p class="event-subtitle">"The Village of Joy" — <em>Làng Phong Di Linh</em></p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Cassaigne gathered the leprosy patients scattered in the forests and proposed building a village — <em>their</em> village, where no one would be expelled, everyone would be cared for, housed, educated, and baptized if they wished. The patients built traditional houses themselves, aided by healthy villagers. A village chief was appointed; agricultural plots were laid out; an infirmary and chapel rose at the center.</p>
+            <p>The French colonial administration provided a daily subsidy of 20 cents per patient and helped build roads and facilities. By 1932 the village counted more than 75 residents. Cassaigne organized film screenings (Charlie Chaplin proved universally beloved, even for those who only spoke K'Ho) and celebrated festivals with rice wine, dried boar meat, and tobacco. The settlement earned the nickname <em>Làng Vui</em> — "The Village of Joy."</p>
+            <div class="event-quote">
+              "Smiling is also a healing ingredient."
+            </div>
+            <div class="event-tags">
+              <span class="tag">Village of Joy</span>
+              <span class="tag">Franciscan Missionaries of Mary join 1938</span>
+              <span class="tag">Still active today</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="vietnam" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1929–1940</div>
+              <h3 class="event-title">Language, Literature &amp; Illness</h3>
+              <p class="event-subtitle">Malaria, exhaustion, and scholarly achievement</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>These were years of extraordinary productivity and physical hardship. Cassaigne published a small K'Ho conversational manual (1930, Saigon), a K'Ho–French–Vietnamese dictionary (1929), and an ethnographic study of K'Ho customs (1937). His pastoral territory ran 100 km along mountain roads from Di Linh to Đà Lạt, which he traveled by horseback and on foot.</p>
+            <p>He suffered malaria so severely that in one year he counted 10 months of fever. Exhausted, he was hospitalized in Đà Lạt, then Saigon, and finally sent back to France for rest and treatment (1932–1933). He returned to Di Linh in early 1933, received an assistant (Father Chauvel, MEP), and continued building the mission with renewed vigor. In 1938, Franciscan Missionaries of Mary sisters arrived to assist with medical and spiritual care.</p>
+            <div class="event-tags">
+              <span class="tag">K'Ho dictionary 1929</span>
+              <span class="tag">K'Ho customs 1937</span>
+              <span class="tag">Convalescence France 1932–33</span>
+              <span class="tag">FMM sisters arrive 1938</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHAPTER III: VICAR APOSTOLIC -->
+  <section class="chapter-block" data-chapter="bishop" id="chapter-bishop">
+    <div class="chapter-header" data-chapter="bishop">
+      <div class="chapter-num">III</div>
+      <div class="chapter-meta">
+        <div class="chapter-label">Chapter Three</div>
+        <h2 class="chapter-title">Vicar Apostolic of Saigon</h2>
+        <div class="chapter-range">1941 – 1955 · Saigon, Cochinchina</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="event milestone" data-chapter="bishop" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Consecration</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">20 February / 24 June 1941</div>
+              <h3 class="event-title">Appointed &amp; Consecrated Bishop</h3>
+              <p class="event-subtitle">Vicar Apostolic of Saigon · Titular Bishop of Gadara</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>After the death of Bishop Isidore Dumortier in 1940, Rome appointed the 46-year-old highland missionary — who had never sought ecclesiastical office — as Vicar Apostolic of Saigon and Titular Bishop of Gadara. He was consecrated on 24 June 1941, the feast of Saint John the Baptist, at the Cathedral of Notre-Dame in Saigon, with the motto <strong>Caritas et Amor</strong> (Charity and Love).</p>
+            <p>Cassaigne reportedly received the appointment with dismay and accepted only out of obedience. Five weeks later, Japanese forces entered Saigon. When Japanese officers arrived at the bishopric seeking to requisition the building, Cassaigne turned them away — with the approval of Governor-General Admiral Decoux.</p>
+            <div class="event-tags">
+              <span class="tag">Motto: Caritas et Amor</span>
+              <span class="tag">Notre-Dame Cathedral, Saigon</span>
+              <span class="tag">Japanese occupation begins July 1941</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="bishop" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1941–1945</div>
+              <h3 class="event-title">Shepherding Saigon Through War</h3>
+              <p class="event-subtitle">Japanese occupation, Allied bombings, and pastoral courage</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>The war years tested every dimension of Cassaigne's character. On 6 May 1944, American aircraft bombed Saigon, killing 250 and wounding 360. Cassaigne rode his bicycle through the devastated streets wearing a Red Cross armband — just as he had pedaled the front lines of the Somme a generation earlier.</p>
+            <p>When Japan seized full control on 9 March 1945, a Japanese delegation arrived at the bishopric requesting that Cassaigne serve as intermediary between the Army and the French civilian population. He refused outright: <em>"No! … And no, it's no!"</em> More than 3,000 Europeans died during the subsequent imprisonment and forced labor.</p>
+            <div class="event-quote">
+              "No! … And no, it's no!" — refusing to collaborate with the Japanese occupation
+            </div>
+            <div class="event-tags">
+              <span class="tag">Saigon bombing May 1944</span>
+              <span class="tag">Japanese coup March 1945</span>
+              <span class="tag">Refused collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="bishop" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1945–1955</div>
+              <h3 class="event-title">Post-War Reconstruction &amp; the First Republic</h3>
+              <p class="event-subtitle">Indochina War, Di Linh rebuilt, pastoral governance</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>The post-war decade brought further turbulence. An assassination attempt at the bishopric was foiled in the night of 7–8 June 1948; two infiltrators were arrested. Cassaigne made pastoral visits to France in 1947 and 1950 to report to Rome and see his aging relatives in the Landes.</p>
+            <p>The Di Linh leprosarium, which had been heavily damaged during the conflict, was ordered rebuilt in 1952 by Marshal de Lattre de Tassigny. Cassaigne oversaw the reconstruction even from Saigon. All the while he harbored a growing desire to return to his highland family. The decision was made for him — providentially — by his own body.</p>
+            <div class="event-tags">
+              <span class="tag">Assassination attempt 1948</span>
+              <span class="tag">Di Linh rebuilt 1952</span>
+              <span class="tag">Visits France 1947, 1950</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event milestone" data-chapter="bishop" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Resignation</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">20 September 1955</div>
+              <h3 class="event-title">Resigns as Vicar Apostolic</h3>
+              <p class="event-subtitle">Diagnosis of leprosy · Return to Di Linh</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>On 19 December 1954 — the twenty-ninth anniversary of his ordination — Cassaigne noticed a numb patch on his skin during Mass. He tested it with a pin: no pain. He understood immediately. The Pasteur Institute in Saigon confirmed the diagnosis of leprosy on 24 February 1955. He wrote to the Superior of the MEP on 5 March asking permission to resign and retire to the Di Linh leprosarium "to be near my children whom I love."</p>
+            <p>The Holy See accepted his resignation on 20 September 1955. He consecrated his successor, Father Simon Hoa Hien, and departed Saigon for the last time — back to the highlands, back to the lepers, back home.</p>
+            <div class="event-quote">
+              "I regret nothing. I have lost nothing. On the contrary, I won everything."
+            </div>
+            <div class="event-tags">
+              <span class="tag">Diagnosed 19 Dec 1954</span>
+              <span class="tag">Confirmed Pasteur Institute 24 Feb 1955</span>
+              <span class="tag">Resigned 20 September 1955</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHAPTER IV: BISHOP OF LEPERS -->
+  <section class="chapter-block" data-chapter="leper" id="chapter-leper">
+    <div class="chapter-header" data-chapter="leper">
+      <div class="chapter-num">IV</div>
+      <div class="chapter-meta">
+        <div class="chapter-label">Chapter Four</div>
+        <h2 class="chapter-title">Leper Among Lepers</h2>
+        <div class="chapter-range">1955 – 1973 · Di Linh Leprosarium, Lâm Đồng</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="event milestone" data-chapter="leper" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Return</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">Late 1955</div>
+              <h3 class="event-title">Returns to Di Linh as One of Them</h3>
+              <p class="event-subtitle">From bishop's palace to the Village of Joy</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Cassaigne's return to Di Linh was met with what he called "explosions of joy." He chose not to return to France, where he could have received medical treatment, but to live among his K'Ho leprosy patients 230 km from Saigon in the mountains of Lâm Đồng.</p>
+            <p>He wrote to cousins in the Landes: <em>"I prayed every day for Vietnam. Vietnam is my homeland. God wanted it that way."</em> He expressed his wish to die and be buried "in the mountain country" with his children. His daily routine was structured around prayer, infirmary visits, the Rosary, and long walks alone along the mountain paths at dusk.</p>
+            <div class="event-quote">
+              "My return among the Montagnards was greeted with explosions of joy… I prayed every day for Vietnam. Vietnam is my homeland. God wanted it that way."
+            </div>
+            <div class="event-tags">
+              <span class="tag">Chose Di Linh over France</span>
+              <span class="tag">Daily Mass 6 AM</span>
+              <span class="tag">Citroën 2CV transport</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="leper" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">1957–1964</div>
+              <h3 class="event-title">Bone Tuberculosis &amp; Pulmonary Afflictions</h3>
+              <p class="event-subtitle">Multiple illnesses — all borne in silence</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>The diseases multiplied. In 1957 he developed incurable bone tuberculosis; in 1964, pulmonary tuberculosis returned. Despite severe pain, he continued his ministry at Di Linh without complaint. Those near him often heard him pray that God would reduce the suffering of the leprosy patients and take it onto himself instead.</p>
+            <p>Despite everything, the bishop was known above all for his joy. The Daughters of Charity and later the Franciscan Missionaries of Mary who served alongside him testified to his radiating warmth and humor.</p>
+            <div class="event-tags">
+              <span class="tag">Bone TB 1957</span>
+              <span class="tag">Pulmonary TB 1964</span>
+              <span class="tag">Borne in prayer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="leper" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">12 January 1972</div>
+              <h3 class="event-title">Government Decoration</h3>
+              <p class="event-subtitle">Republic of South Vietnam's highest civilian honor</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>On his sickbed, Cassaigne received the <em>Đệ Tứ Bảo Quốc Huân Chương</em> — the highest decoration of the Republic of South Vietnam — from General Nguyễn Văn Hiếu, Assistant to the Vice-President, and Secretary of State Nguyen Thach Van. A delegation of military and civil dignitaries traveled to Di Linh for the ceremony.</p>
+            <p>Cassaigne thanked them "with the heart of a missionary" and reiterated his prayer for Vietnam and his wish to remain buried in the mountain country beside his people.</p>
+            <div class="event-tags">
+              <span class="tag">Đệ Tứ Bảo Quốc Huân Chương</span>
+              <span class="tag">Received on sickbed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="leper" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">February 1973</div>
+              <h3 class="event-title">Broken Hip — Final Illness Begins</h3>
+              <p class="event-subtitle">Eight months bedridden</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>In February 1973, Cassaigne fell and broke his right femur. The fracture confined him to bed for eight months. As his leprosy advanced and the pain intensified, those attending him heard him say with uncharacteristic directness: <em>"I suffer terribly. I suffer too much."</em> His agony was real — yet those present also testified to his serenity and abandonment to God.</p>
+            <div class="event-tags">
+              <span class="tag">Fracture February 1973</span>
+              <span class="tag">8 months bedridden</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event milestone" data-chapter="leper" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Death</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">31 October 1973 · 1:25 AM</div>
+              <h3 class="event-title">Dies at Di Linh Leprosarium</h3>
+              <p class="event-subtitle">Buried at the foot of the village bell tower</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>On the evening of 30 October 1973, Cassaigne received the Last Anointing. He died at 1:25 AM on 31 October, the eve of All Saints' Day. He was 78 years old and had spent 47 years in Vietnam — 44 of them in the service of leprosy patients.</p>
+            <p>His funeral on 5 November was attended by representatives of President Nguyễn Văn Thiệu, the French Ambassador Jean-Marie Merillon, 11 bishops, 70 priests, and thousands of Vietnamese faithful. Archbishop Paul Nguyễn Văn Bình of Saigon presided at the concelebrated Mass.</p>
+            <p>He was buried beside the chapel of the Di Linh leprosarium, beneath a white cross, exactly as he had wished. His tombstone bears only:</p>
+            <div class="event-quote">
+              JEAN CASSAIGNE<br/>1895 – 1973<br/>Caritas et Amor
+            </div>
+            <p>His tomb remains a permanent site of popular veneration. Thousands make pilgrimage to Di Linh, Bảo Thuận commune, Di Linh district, Lâm Đồng province — a place that was once the "wild lands" on a blank map.</p>
+            <div class="event-tags">
+              <span class="tag">Di Linh, Lâm Đồng</span>
+              <span class="tag">11 bishops · 70 priests</span>
+              <span class="tag">Active pilgrimage site</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHAPTER V: BEATIFICATION -->
+  <section class="chapter-block" data-chapter="beatification" id="chapter-beatification">
+    <div class="chapter-header" data-chapter="beatification">
+      <div class="chapter-num">V</div>
+      <div class="chapter-meta">
+        <div class="chapter-label">Chapter Five</div>
+        <h2 class="chapter-title">The Cause for Beatification</h2>
+        <div class="chapter-range">1973 – Present · Vietnam &amp; Rome</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="event" data-chapter="beatification" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">Post-1973</div>
+              <h3 class="event-title">Spontaneous Popular Veneration</h3>
+              <p class="event-subtitle">Pilgrimages to Di Linh begin immediately after death</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>From the moment of his burial, Jean Cassaigne's tomb at Di Linh became a place of continuous pilgrimage. Catholics, Vietnamese Montagnards, and even non-Christians came to pray at the foot of the bell tower of the leprosarium he had built. The Diocese of Đà Lạt has maintained the site and promoted his memory through annual memorial observances every 31 October.</p>
+            <p>In 2024 the diocese organized major commemorations for the 50th anniversary of his death, drawing pilgrims from across Vietnam and the diaspora. The Daughters of Charity continue to serve at the leprosarium (now the Di Linh Leprosy Treatment Center, administered by the state).</p>
+            <div class="event-tags">
+              <span class="tag">Annual memorial 31 October</span>
+              <span class="tag">Diocese of Đà Lạt</span>
+              <span class="tag">50th anniversary commemorations 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event" data-chapter="beatification" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">Ongoing</div>
+              <h3 class="event-title">Diocesan Cause Opened</h3>
+              <p class="event-subtitle">Diocese of Đà Lạt in collaboration with the MEP</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>The Catholic authorities of Vietnam have formally opened the diocesan inquiry (the first stage of a beatification cause) in collaboration with the Missions Étrangères de Paris. The Diocese of Đà Lạt is preparing the canonical dossier — gathering testimonies, documents, and evidence of heroic virtue — in view of submitting it to the Dicastery for the Causes of Saints in Rome.</p>
+            <p>Cassaigne has been named among the 25 "witnesses of faith" highlighted by the Pontifical Mission Societies as exemplars of missionary holiness. His cause has been championed by Vietnamese bishops, the MEP, and the Fondation Jean Cassaigne (established under the Fondation Raoul Follereau).</p>
+            <div class="event-tags">
+              <span class="tag">Diocesan inquiry open</span>
+              <span class="tag">MEP (Paris) collaborating</span>
+              <span class="tag">25 Missionary Witnesses list</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event milestone" data-chapter="beatification" tabindex="0" role="button" aria-expanded="false">
+        <div class="event-node"><div class="node-ring"></div></div>
+        <div class="event-card">
+          <div class="milestone-badge">Status</div>
+          <div class="event-header">
+            <div class="event-left">
+              <div class="event-date">Current Status</div>
+              <h3 class="event-title">Servant of God — Cause in Progress</h3>
+              <p class="event-subtitle">Diocesan phase · Road to the Dicastery for Saints</p>
+            </div>
+            <svg class="event-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="event-body">
+            <p>Jean Cassaigne currently holds the title <strong>Servant of God</strong> — the first formal stage in the Catholic canonization process, indicating that a cause has been opened and an inquiry into heroic virtue is underway. The process requires the diocesan phase to be completed and forwarded to Rome, where the Dicastery for the Causes of Saints will evaluate evidence of virtuous life and, ultimately, verified miracles.</p>
+
+            <div class="status-card">
+              <h4>Beatification Process — Stages</h4>
+              <div class="process-steps">
+                <div class="process-step">
+                  <div class="step-indicator done">✓</div>
+                  <div class="step-text">
+                    <strong>Servant of God</strong><br>
+                    <small>Diocesan inquiry opened by Diocese of Đà Lạt in collaboration with the MEP. Gathering of testimonies and documentation underway.</small>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-indicator active">▶</div>
+                  <div class="step-text">
+                    <strong>Venerable</strong><br>
+                    <small>Requires Roman Congregation decree confirming heroic virtue. Awaiting submission of full dossier to Dicastery for the Causes of Saints.</small>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-indicator pending">3</div>
+                  <div class="step-text">
+                    <strong>Blessed (Beatification)</strong><br>
+                    <small>Requires verification of one miracle through the candidate's intercession (or martyrdom declaration). Papal ceremony.</small>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-indicator pending">4</div>
+                  <div class="step-text">
+                    <strong>Saint (Canonization)</strong><br>
+                    <small>Requires a second verified miracle post-beatification. Papal infallible declaration.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-tags" style="margin-top: var(--space-5);">
+              <span class="tag">Current title: Servant of God</span>
+              <span class="tag">Diocese of Đà Lạt</span>
+              <span class="tag">Fondation Jean Cassaigne</span>
+              <span class="tag">MEP Paris</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <svg class="footer-cross" width="28" height="40" viewBox="0 0 28 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="11" y="0" width="6" height="40" rx="3" fill="currentColor"/>
+      <rect x="0" y="10" width="28" height="6" rx="3" fill="currentColor"/>
+    </svg>
+    <p class="footer-title">
+      "The priest who offers the Holy Sacrifice must himself become a sacrificial victim."
+    </p>
+    <p class="footer-tomb">JEAN CASSAIGNE · 1895–1973 · CARITAS ET AMOR</p>
+    <p class="footer-sources">
+      Sources:
+      <a href="http://saigon-vietnam.fr/jean-cassaigne_en.php" target="_blank" rel="noopener">saigon-vietnam.fr</a> ·
+      <a href="https://www.catholic-hierarchy.org/bishop/bcassj.html" target="_blank" rel="noopener">Catholic Hierarchy</a> ·
+      <a href="https://fr.wikipedia.org/wiki/Jean_Cassaigne" target="_blank" rel="noopener">Wikipédia (fr)</a> ·
+      <a href="https://prixjeancassaigne.org" target="_blank" rel="noopener">prixjeancassaigne.org</a> ·
+      <a href="https://irfa.paris/en/missionnaire/3300-cassaigne-jean/" target="_blank" rel="noopener">IRFA Paris</a> ·
+      <a href="https://hdgmvietnam.com/chi-tiet/chan-dung-linh-muc-viet-nam-duc-cha-jean-cassaigne-18716" target="_blank" rel="noopener">HDGM Vietnam</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // ── DARK MODE TOGGLE ──────────────────────────────────────────
+  (function () {
+    const btn = document.querySelector('[data-theme-toggle]');
+    const root = document.documentElement;
+    let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    root.setAttribute('data-theme', theme);
+    updateIcon();
+
+    btn && btn.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateIcon();
+    });
+
+    function updateIcon() {
+      if (!btn) return;
+      btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      btn.innerHTML = theme === 'dark'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+  })();
+
+  // ── EXPAND / COLLAPSE EVENTS ──────────────────────────────────
+  document.querySelectorAll('.event').forEach(ev => {
+    function toggle() {
+      const isOpen = ev.classList.contains('open');
+      // Close all others (optional accordion behavior)
+      // document.querySelectorAll('.event.open').forEach(o => { if (o !== ev) { o.classList.remove('open'); o.querySelector('.event-card').setAttribute('aria-expanded', 'false'); }});
+      ev.classList.toggle('open', !isOpen);
+      ev.setAttribute('aria-expanded', String(!isOpen));
+    }
+    ev.addEventListener('click', toggle);
+    ev.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+
+  // ── CHAPTER FILTER ────────────────────────────────────────────
+  const pills = document.querySelectorAll('.chapter-pill');
+  const chapters = document.querySelectorAll('.chapter-block');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = pill.dataset.filter;
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      chapters.forEach(ch => {
+        if (filter === 'all' || ch.dataset.chapter === filter) {
+          ch.classList.remove('hidden');
+          // Re-trigger animation
+          ch.querySelectorAll('.event').forEach((ev, i) => {
+            ev.style.animation = 'none';
+            void ev.offsetWidth;
+            ev.style.animation = '';
+            ev.style.animationDelay = (0.05 + i * 0.05) + 's';
+          });
+        } else {
+          ch.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // ── SCROLL-SPY: highlight active chapter in filter ───────────
+  const chapterSections = Array.from(chapters);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const ch = entry.target.dataset.chapter;
+        // only update nav if "all" is the active filter
+        const activePill = document.querySelector('.chapter-pill.active');
+        if (activePill && activePill.dataset.filter === 'all') {
+          // subtle: we don't change pill active state, but could add a secondary indicator
+        }
+      }
+    });
+  }, { threshold: 0.2 });
+  chapterSections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
