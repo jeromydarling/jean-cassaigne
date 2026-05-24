@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sources & Resources — Jean Cassaigne (1895–1973)</title>
+  <meta name="description" content="Primary sources, books, videos, articles, and archives on Jean Cassaigne — French missionary, Bishop of Saigon, leper bishop, and Servant of God." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root,
+    [data-theme="light"] {
+      --color-bg:              #f5f0e8;
+      --color-surface:         #faf6ed;
+      --color-surface-2:       #fdfbf6;
+      --color-surface-offset:  #ede7d6;
+      --color-divider:         #d9cfba;
+      --color-border:          #c8bfa8;
+      --color-text:            #2a2118;
+      --color-text-muted:      #6b5c42;
+      --color-text-faint:      #a89878;
+      --color-text-inverse:    #faf6ed;
+      --color-primary:         #8b2020;
+      --color-primary-hover:   #6e1818;
+      --color-primary-highlight: #e8d0cc;
+      --color-accent:          #3d6b4a;
+      --color-gold:            #b8860b;
+      --color-gold-light:      #f0d080;
+      --shadow-sm:  0 1px 3px rgba(42, 33, 24, 0.08);
+      --shadow-md:  0 4px 14px rgba(42, 33, 24, 0.10);
+      --shadow-lg:  0 12px 36px rgba(42, 33, 24, 0.14);
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-full: 9999px;
+      --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.82rem + 0.3vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --font-display: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body:    'Crimson Pro', 'Georgia', serif;
+      --font-ui:      'Switzer', 'Helvetica Neue', sans-serif;
+      --content-narrow:  640px;
+      --content-default: 920px;
+      --content-wide:    1100px;
+    }
+    [data-theme="dark"] {
+      --color-bg:              #1a1510;
+      --color-surface:         #211c15;
+      --color-surface-2:       #272019;
+      --color-surface-offset:  #1e1912;
+      --color-divider:         #342d22;
+      --color-border:          #443a2c;
+      --color-text:            #e8dfc8;
+      --color-text-muted:      #9e8f72;
+      --color-text-faint:      #665a44;
+      --color-text-inverse:    #1a1510;
+      --color-primary:         #d96060;
+      --color-primary-hover:   #e87878;
+      --color-primary-highlight: #4a2424;
+      --color-accent:          #6aaa7e;
+      --color-gold:            #d4a844;
+      --color-gold-light:      #8a6820;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.3);
+      --shadow-md:  0 4px 14px rgba(0,0,0,0.4);
+      --shadow-lg:  0 12px 36px rgba(0,0,0,0.5);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.65; color: var(--color-text); background-color: var(--color-bg); transition: background-color 0.3s ease, color 0.3s ease; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+    a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; transition: color var(--transition); }
+    a:hover { color: var(--color-primary-hover); }
+    h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; }
+    p, li { text-wrap: pretty; max-width: 72ch; }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: color-mix(in srgb, var(--color-surface) 95%, transparent);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-3) var(--space-6);
+    }
+    .header-inner { max-width: var(--content-wide); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    .site-logo { display: flex; align-items: center; gap: var(--space-3); text-decoration: none; color: var(--color-text); }
+    .logo-icon { width: 32px; height: 32px; flex-shrink: 0; color: var(--color-primary); }
+    .logo-text { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+    .logo-sub { display: block; font-size: var(--text-xs); font-family: var(--font-ui); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-text-muted); }
+    .header-controls { display: flex; align-items: center; gap: var(--space-3); }
+    .back-link { font-family: var(--font-ui); font-size: var(--text-sm); font-weight: 500; text-decoration: none; color: var(--color-text-muted); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); border: 1px solid var(--color-border); transition: all var(--transition); display: flex; align-items: center; gap: var(--space-2); }
+    .back-link:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+    .theme-toggle { padding: var(--space-2); border-radius: var(--radius-full); color: var(--color-text-muted); transition: color var(--transition); }
+    .theme-toggle:hover { color: var(--color-text); }
+
+    /* ── PAGE HEADER ── */
+    .page-hero {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-divider);
+      padding: clamp(var(--space-12), 8vw, var(--space-20)) var(--space-6);
+      text-align: center;
+    }
+    .page-hero-eyebrow { font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-4); }
+    .page-hero-title { font-size: var(--text-2xl); font-weight: 500; letter-spacing: -0.02em; margin-bottom: var(--space-4); }
+    .page-hero-desc { font-size: var(--text-lg); font-style: italic; color: var(--color-text-muted); max-width: 56ch; margin: 0 auto var(--space-6); line-height: 1.55; }
+    .page-hero-note {
+      display: inline-block;
+      font-family: var(--font-ui); font-size: var(--text-sm); color: var(--color-text-muted);
+      background: var(--color-surface-offset); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: var(--space-3) var(--space-5); max-width: 60ch; text-align: left; line-height: 1.6;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .sources-main { max-width: var(--content-wide); margin: 0 auto; padding: var(--space-16) var(--space-6) var(--space-24); }
+
+    /* ── SECTION HEADERS ── */
+    .sources-section { margin-bottom: var(--space-16); }
+    .section-header {
+      display: flex; align-items: center; gap: var(--space-4);
+      margin-bottom: var(--space-8); padding-bottom: var(--space-4);
+      border-bottom: 2px solid var(--color-divider);
+    }
+    .section-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-md);
+      font-size: 1.25rem;
+    }
+    .section-icon.red   { background: var(--color-primary-highlight); color: var(--color-primary); }
+    .section-icon.green { background: #c8dece; color: var(--color-accent); }
+    .section-icon.gold  { background: #f0e0a0; color: var(--color-gold); }
+    .section-icon.blue  { background: #d0daf0; color: #3850a0; }
+    .section-icon.brown { background: #e8d8c0; color: #7a5028; }
+    [data-theme="dark"] .section-icon.green { background: #1e3428; color: #6aaa7e; }
+    [data-theme="dark"] .section-icon.gold  { background: #2a2010; color: #d4a844; }
+    [data-theme="dark"] .section-icon.blue  { background: #182030; color: #8090d8; }
+    [data-theme="dark"] .section-icon.brown { background: #201810; color: #c4a060; }
+    .section-title { font-size: var(--text-xl); font-weight: 600; }
+    .section-subtitle { font-family: var(--font-ui); font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-1); }
+
+    /* ── SOURCE CARDS ── */
+    .source-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--space-5); }
+    .source-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+      display: flex; flex-direction: column; gap: var(--space-3);
+    }
+    .source-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-primary); transform: translateY(-1px); }
+    .source-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+    .source-badge {
+      flex-shrink: 0;
+      font-family: var(--font-ui); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px var(--space-2); border-radius: var(--radius-sm);
+    }
+    .badge-primary   { background: var(--color-primary-highlight); color: var(--color-primary); }
+    .badge-video     { background: #fde0d0; color: #c03000; }
+    .badge-book      { background: #e0e8f8; color: #2848a0; }
+    .badge-article   { background: #d8f0e0; color: #286840; }
+    .badge-archive   { background: #f0e8d0; color: #806020; }
+    .badge-viet      { background: #ffe8d0; color: #a04010; }
+    [data-theme="dark"] .badge-primary { background: #4a2424; color: #d96060; }
+    [data-theme="dark"] .badge-video   { background: #3a1808; color: #e06030; }
+    [data-theme="dark"] .badge-book    { background: #101828; color: #8090d8; }
+    [data-theme="dark"] .badge-article { background: #0e2018; color: #60b878; }
+    [data-theme="dark"] .badge-archive { background: #201808; color: #c0a050; }
+    [data-theme="dark"] .badge-viet    { background: #301008; color: #e08050; }
+
+    .source-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; line-height: 1.2; }
+    .source-meta { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: 0.02em; }
+    .source-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; flex-grow: 1; }
+    .source-quote {
+      font-style: italic; font-size: var(--text-sm);
+      border-left: 2px solid var(--color-primary);
+      padding-left: var(--space-3);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    .source-link {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 500;
+      letter-spacing: 0.04em; text-decoration: none; color: var(--color-primary);
+      padding: var(--space-2) var(--space-3);
+      border: 1px solid var(--color-primary-highlight);
+      border-radius: var(--radius-full);
+      background: var(--color-surface-2);
+      transition: all var(--transition);
+      align-self: flex-start; margin-top: auto;
+    }
+    .source-link:hover { background: var(--color-primary); color: var(--color-text-inverse); border-color: var(--color-primary); }
+    .source-link svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .source-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-1); }
+    .source-tag { font-family: var(--font-ui); font-size: 0.7rem; letter-spacing: 0.04em; padding: 2px var(--space-2); border-radius: var(--radius-sm); background: var(--color-surface-offset); color: var(--color-text-muted); }
+
+    /* ── QUOTES BLOCK ── */
+    .quotes-block { display: flex; flex-direction: column; gap: var(--space-6); }
+    .quote-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: var(--space-5) var(--space-6);
+    }
+    .quote-text { font-family: var(--font-display); font-size: var(--text-lg); font-style: italic; line-height: 1.55; margin-bottom: var(--space-3); }
+    .quote-attr { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: 0.04em; }
+    .quote-code { font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.08em; padding: 2px var(--space-2); background: var(--color-surface-offset); border-radius: var(--radius-sm); color: var(--color-text-faint); margin-left: var(--space-2); }
+
+    /* ── BEATIFICATION BOX ── */
+    .beatification-box {
+      background: linear-gradient(135deg, var(--color-surface), var(--color-surface-2));
+      border: 2px solid var(--color-gold);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-10);
+      text-align: center;
+      margin-bottom: var(--space-16);
+    }
+    .beat-title { font-size: var(--text-xl); font-weight: 600; color: var(--color-gold); margin-bottom: var(--space-3); }
+    .beat-status {
+      display: inline-block;
+      font-family: var(--font-ui); font-size: var(--text-sm); font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: var(--space-2) var(--space-5);
+      border: 2px solid var(--color-gold);
+      border-radius: var(--radius-full);
+      color: var(--color-gold);
+      margin-bottom: var(--space-4);
+    }
+    .beat-desc { font-size: var(--text-base); color: var(--color-text-muted); max-width: 58ch; margin: 0 auto; line-height: 1.65; }
+    .beat-steps { display: flex; justify-content: center; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-6); }
+    .beat-step {
+      font-family: var(--font-ui); font-size: var(--text-xs); letter-spacing: 0.04em;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+    }
+    .beat-step.active { background: var(--color-gold); color: #fff; border-color: var(--color-gold); font-weight: 600; }
+    .beat-step.done { background: var(--color-surface-offset); color: var(--color-text-muted); text-decoration: line-through; }
+    .beat-step.future { color: var(--color-text-faint); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-divider);
+      padding: var(--space-12) var(--space-6);
+      text-align: center;
+    }
+    .footer-inner { max-width: var(--content-default); margin: 0 auto; }
+    .footer-tomb { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: var(--space-2); }
+    .footer-epitaph { font-size: var(--text-sm); font-style: italic; color: var(--color-text-faint); }
+
+    @media (max-width: 600px) {
+      .source-grid { grid-template-columns: 1fr; }
+      .beat-steps { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="4" width="4" height="28" rx="2" fill="currentColor" opacity="0.7"/>
+        <rect x="8" y="12" width="20" height="4" rx="2" fill="currentColor" opacity="0.7"/>
+      </svg>
+      <span class="logo-text">
+        Jean Cassaigne
+        <span class="logo-sub">Servant of God · 1895–1973</span>
+      </span>
+    </a>
+    <div class="header-controls">
+      <a href="index.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Timeline
+      </a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════ PAGE HERO ═══════ -->
+<section class="page-hero">
+  <p class="page-hero-eyebrow">Research & Resources</p>
+  <h1 class="page-hero-title">Sources on Jean Cassaigne</h1>
+  <p class="page-hero-desc">
+    Primary letters, archival records, books, videos, and online resources — everything available for research on the life and cause of Bishop Jean Cassaigne, MEP.
+  </p>
+  <span class="page-hero-note">
+    <strong>Note:</strong> Cassaigne left behind an unusually rich primary record — personal letters, a 1943 public presentation on leprosy, 30 years of mission reports to MEP, and the documented words of his patients. The major archive is at IRFA / MEP, 128 rue du Bac, Paris (largely untranslated). A 2022 photobook contains 174 archival photos and 39 original citations.
+  </span>
+</section>
+
+<!-- ═══════ MAIN ═══════ -->
+<main class="sources-main">
+
+  <!-- BEATIFICATION STATUS -->
+  <div class="beatification-box">
+    <p class="beat-title">Cause for Beatification</p>
+    <div class="beat-status">Servant of God</div>
+    <p class="beat-desc">
+      In April 2021, all 27 bishops of the Vietnamese Episcopal Conference unanimously approved advancing Jean Cassaigne's cause. The diocesan inquiry is open in the Diocese of Đà Lạt, in cooperation with the Missions Étrangères de Paris (MEP). He was one of 25 missionary witnesses chosen by the Vatican for the Extraordinary Missionary Month (October 2019).
+    </p>
+    <div class="beat-steps">
+      <span class="beat-step done">Servant of God</span>
+      <span class="beat-step active">Diocesan Inquiry Open ✦</span>
+      <span class="beat-step future">Venerable</span>
+      <span class="beat-step future">Blessed</span>
+      <span class="beat-step future">Saint</span>
+    </div>
+  </div>
+
+  <!-- PRIMARY SOURCES: HIS OWN WORDS -->
+  <section class="sources-section" id="primary">
+    <div class="section-header">
+      <div class="section-icon red">✍</div>
+      <div>
+        <h2 class="section-title">Primary Sources — His Own Words</h2>
+        <p class="section-subtitle">Documented letters, speeches, and spoken statements attributed to Jean Cassaigne</p>
+      </div>
+    </div>
+    <div class="quotes-block">
+      <div class="quote-item">
+        <p class="quote-text">"I who made of my poverty a pride and my joy — here I am, become a prince of the Church. But I tell them all: they will change my costume and my cage, but they will not change the man."</p>
+        <p class="quote-attr">Letter to his father, on being appointed Bishop of Saigon, 1941 <span class="quote-code">A1</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"I ask your Excellency to allow me to submit my resignation to the Holy See and to retire to the leprosarium of Djiring, near my children whom I have the most beloved and whom, in his goodness, the divine Master allows me to <em>resemble</em>."</p>
+        <p class="quote-attr">Letter to MEP Superior, March 5, 1955 <span class="quote-code">A2</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"In leaving Saigon, I regret nothing, I have lost nothing — on the contrary, I won everything. I did my duty there for fourteen and a half years and I am sometimes surprised to have been able to hold out for so long."</p>
+        <p class="quote-attr">Letter to his cousins in Urgons (Landes), 1955 <span class="quote-code">A3</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"What I feared most was not death, but a wound that would have prevented me from giving myself to the missions."</p>
+        <p class="quote-attr">Letter (wartime period), on fear of wounds vs. death <span class="quote-code">A5</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"The villagers take them into the forest, build them a thatched hut and leave them there alone to live or die. Then, weak and lonely in the deserted hut, the lepers no longer have the strength to do anything... They will slowly die a miserable death, will collapse in some corner and die of hunger and cold, without anyone knowing."</p>
+        <p class="quote-attr">1943 Saigon public presentation on leprosy in the highlands <span class="quote-code">A6</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"Une grâce." <em>("A grace.")</em></p>
+        <p class="quote-attr">His two-word response when told he had leprosy, December 1954 — recorded in the MEP obituary by Father Fernand Parrel <span class="quote-code">B1</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"Well, here's a good one — they just bombed me into being a bishop!" <em>(Il m'en arrive une bien bonne… on vient de me bombarder évêque!)</em></p>
+        <p class="quote-attr">To French friends at the bungalow, on learning of his episcopal appointment, 1941 <span class="quote-code">B2</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"I have only three wishes in my life: to endure, to suffer, and to die here, among my Montagnards."</p>
+        <p class="quote-attr">Said repeatedly in his final years at Di Linh <span class="quote-code">B4</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"Vietnam is my homeland. God wanted it that way. My dream will soon come true: I held on, I suffered here, I am going to die and want to be buried with my children, in the mountain country."</p>
+        <p class="quote-attr">At his sickbed, to General Nguyễn Văn Hiếu's representative, April 12, 1972 <span class="quote-code">B5</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"The good Lord loves me, because he chose for me the best prayer, which is suffering — the one he reserves for friends."</p>
+        <p class="quote-attr">Said to friends near the end of his life <span class="quote-code">B6</span></p>
+      </div>
+      <div class="quote-item">
+        <p class="quote-text">"I ask those who, while alive, I could not help, please forgive me."</p>
+        <p class="quote-attr">His tombstone epitaph — written at his own request. Di Linh leprosarium bell tower. <span class="quote-code">D3</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORDS OF HIS PEOPLE -->
+  <section class="sources-section" id="people">
+    <div class="section-header">
+      <div class="section-icon green">🗣</div>
+      <div>
+        <h2 class="section-title">Words of His People</h2>
+        <p class="section-subtitle">Documented K'Ho and Vietnamese voices</p>
+      </div>
+    </div>
+    <div class="quotes-block">
+      <div class="quote-item" style="border-left-color: var(--color-accent);">
+        <p class="quote-text" lang="vi">"Cau dông! Ăn rốp kăh ứh mê đát ăn gũh re hồ trố"</p>
+        <p class="quote-text" style="font-size: var(--text-base);">"Oh, my lord! I will remember you when I am in Heaven."</p>
+        <p class="quote-attr">Ka Trut's dying words to Jean Cassaigne, December 7–8, 1927. K'Ho original + translation. Source: Father Giuse Phung Thanh Quang, <em>Optimism in the Highlands</em> (1972). <span class="quote-code">C1</span></p>
+      </div>
+      <div class="quote-item" style="border-left-color: var(--color-accent);">
+        <p class="quote-text" lang="vi">"Oh cau duong! Oh cau duong! Dan nđắc sơngit bol hi!"</p>
+        <p class="quote-text" style="font-size: var(--text-base);">"Oh big man! Oh big man! Have mercy on us!"</p>
+        <p class="quote-attr">K'Ho lepers calling from the forest — the founding cry of Làng Vui (Village of Joy), ca. 1928–1929. K'Ho original + translation. Source: Father Giuse Phung Thanh Quang. <span class="quote-code">C2</span></p>
+      </div>
+      <div class="quote-item" style="border-left-color: var(--color-accent);">
+        <p class="quote-text">"O Father, you have shown us the true way to heaven... Today we want to live your teaching, to keep alive the bond of love between us and the way you loved us, to suffer in our flesh of sorrow, as you taught us to suffer during your life among us... Pray for us that one day the Lord may consider us worthy to join you in his paradise."</p>
+        <p class="quote-attr">Address by the Di Linh leper community at Jean's funeral, November 5, 1973. Source: Vatican October 2019 Missionary Month testimonies. <span class="quote-code">C3</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS & PRINT -->
+  <section class="sources-section" id="books">
+    <div class="section-header">
+      <div class="section-icon blue">📚</div>
+      <div>
+        <h2 class="section-title">Books & Print</h2>
+        <p class="section-subtitle">Published works about or by Jean Cassaigne</p>
+      </div>
+    </div>
+    <div class="source-grid">
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Jean Cassaigne (1895–1973), l'Évêque des Lépreux</h3>
+          <span class="source-badge badge-book">Book</span>
+        </div>
+        <p class="source-meta">Les Amis de Mgr Jean Cassaigne / Groupe Scolaire Jean Cassaigne · 2022 · French · 17€</p>
+        <p class="source-desc">Photobook with 174 archival photos and postcards and 39 original citations from Cassaigne himself. The most complete visual record available. Sold to fund a statue in Grenade-sur-l'Adour. Essential for any researcher.</p>
+        <div class="source-tags">
+          <span class="source-tag">174 photos</span>
+          <span class="source-tag">39 original citations</span>
+          <span class="source-tag">French only</span>
+        </div>
+        <a href="https://irfa.paris/nouvelle-parution-jean-cassaigne-1895-1973-leveque-des-lepreux/" target="_blank" rel="noopener" class="source-link">
+          IRFA page
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Jean Cassaigne — Au Service des Oubliés</h3>
+          <span class="source-badge badge-book">Book</span>
+        </div>
+        <p class="source-meta">Frédéric Sudupé · Éditions Passiflore · 2024 · French</p>
+        <p class="source-desc">A recent biography focused on his service to the forgotten — lepers, highland peoples, and the marginalized of French Indochina. Likely the most up-to-date French-language narrative biography.</p>
+        <div class="source-tags">
+          <span class="source-tag">French</span>
+          <span class="source-tag">Biography</span>
+          <span class="source-tag">2024</span>
+        </div>
+        <a href="https://www.editions-passiflore.com/litterature/135-jean-cassaigne-au-service-des-oublies-9782379460586.html" target="_blank" rel="noopener" class="source-link">
+          Publisher page
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Jean Cassaigne — Missionnaire et Évêque au Vietnam</h3>
+          <span class="source-badge badge-book">Book</span>
+        </div>
+        <p class="source-meta">Librairie Téqui · French · Available</p>
+        <p class="source-desc">Published by the Catholic bookseller Téqui, this is the primary French-language popular biography available through religious book channels.</p>
+        <div class="source-tags">
+          <span class="source-tag">French</span>
+          <span class="source-tag">Catholic press</span>
+        </div>
+        <a href="https://www.librairietequi.com/jean-cassaigne-missionnaire-et-eveque-au-vietnam.html" target="_blank" rel="noopener" class="source-link">
+          Librairie Téqui
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Optimism in the Highlands</h3>
+          <span class="source-badge badge-book">Book</span>
+        </div>
+        <p class="source-meta">Father Giuse Phung Thanh Quang · 1972 · Vietnamese</p>
+        <p class="source-desc">Written while Cassaigne was still alive and suffering, this is the primary Vietnamese-language source for the founding stories — including the Ka Trut baptism, the K'Ho lepers' cry from the forest, and direct quotes from Jean. The K'Ho original phrases cited throughout this project come from this book. No English translation is known to exist.</p>
+        <div class="source-tags">
+          <span class="source-tag">Vietnamese only</span>
+          <span class="source-tag">K'Ho primary quotes</span>
+          <span class="source-tag">Ka Trut source</span>
+          <span class="source-tag">1972 — written while Jean lived</span>
+        </div>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">K'Ho–French–Vietnamese Dictionary</h3>
+          <span class="source-badge badge-primary">Primary</span>
+        </div>
+        <p class="source-meta">Jean Cassaigne, MEP · Published 1929 · Also: <em>Customs of the Highlanders</em> (1937)</p>
+        <p class="source-desc">Cassaigne's own linguistic work — the dictionary he began as a blank notebook given to him in language school, completed over three years of learning K'Ho from village children. Also published <em>Les Coutumes des Montagnards</em> (1937) on K'Ho customs. Copies may be held at IRFA/MEP Paris and the Bibliothèque Nationale de France.</p>
+        <div class="source-tags">
+          <span class="source-tag">Jean's own work</span>
+          <span class="source-tag">K'Ho language</span>
+          <span class="source-tag">Published 1929</span>
+        </div>
+        <a href="https://irfa.paris/en/missionnaire/3300-cassaigne-jean/" target="_blank" rel="noopener" class="source-link">
+          IRFA archive record
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="sources-section" id="video">
+    <div class="section-header">
+      <div class="section-icon red">▶</div>
+      <div>
+        <h2 class="section-title">Video</h2>
+        <p class="section-subtitle">Documentaries and visits to Di Linh</p>
+      </div>
+    </div>
+    <div class="source-grid">
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">He Had Leprosy… But Chose to Stay in Vietnam</h3>
+          <span class="source-badge badge-video">Video</span>
+        </div>
+        <p class="source-meta">YouTube · Vietnamese · 2025 · ~22 min</p>
+        <p class="source-desc">A thorough Vietnamese-language documentary covering his life from WWI through his death at Di Linh. Includes footage from the leprosarium and the grave site. Subtitles not available in English, but the visual record of Di Linh today is invaluable.</p>
+        <div class="source-quote">"Tôi là người Pháp, nhưng trái tim tôi là của người Việt Nam. Tôi muốn sống trong đau khổ và chết nơi đây. Việt Nam là quê hương của tôi." <br><em>("I am French, but my heart belongs to Vietnam. I want to live in suffering and die here. Vietnam is my homeland.")</em></div>
+        <div class="source-tags">
+          <span class="source-tag">Vietnamese</span>
+          <span class="source-tag">Di Linh footage</span>
+          <span class="source-tag">2025</span>
+        </div>
+        <a href="https://www.youtube.com/watch?v=law4MKMIiBw" target="_blank" rel="noopener" class="source-link">
+          Watch on YouTube
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Visit to the Grave of Bishop Jean Cassaigne</h3>
+          <span class="source-badge badge-video">Video</span>
+        </div>
+        <p class="source-meta">YouTube · Vietnamese · 2025 · ~30 min</p>
+        <p class="source-desc">A pilgrimage-style video to the Di Linh leprosarium complex — shows the bell tower, the grave at its foot, the treatment center still operating today, and reads from his biography. The only known video tour of his burial site.</p>
+        <div class="source-tags">
+          <span class="source-tag">Vietnamese</span>
+          <span class="source-tag">Burial site</span>
+          <span class="source-tag">Di Linh today</span>
+          <span class="source-tag">2025</span>
+        </div>
+        <a href="https://www.youtube.com/watch?v=Zx27bHSKLec" target="_blank" rel="noopener" class="source-link">
+          Watch on YouTube
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Điểm Sách: Đức cha Jean Cassaigne — Vatican News Vietnam</h3>
+          <span class="source-badge badge-video">Video</span>
+        </div>
+        <p class="source-meta">YouTube · Vatican News Tiếng Việt · 2024 · Book review / discussion</p>
+        <p class="source-desc">The Vatican News Vietnamese channel's book review and discussion of the Cassaigne biography as the Diocese of Đà Lạt advances his beatification cause. Shows the active engagement of the Vietnamese Church with his cause.</p>
+        <div class="source-tags">
+          <span class="source-tag">Vietnamese</span>
+          <span class="source-tag">Vatican News</span>
+          <span class="source-tag">Beatification context</span>
+        </div>
+        <a href="https://www.youtube.com/watch?v=LTofQ467VIg" target="_blank" rel="noopener" class="source-link">
+          Watch on YouTube
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WEB RESOURCES -->
+  <section class="sources-section" id="web">
+    <div class="section-header">
+      <div class="section-icon green">🌐</div>
+      <div>
+        <h2 class="section-title">Online Articles & Resources</h2>
+        <p class="section-subtitle">The best English, French, and Vietnamese web sources</p>
+      </div>
+    </div>
+    <div class="source-grid">
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">The Life of Monsignor Cassaigne in Indochina</h3>
+          <span class="source-badge badge-article">English</span>
+        </div>
+        <p class="source-meta">saigon-vietnam.fr · Most complete English narrative</p>
+        <p class="source-desc">The most thorough English-language biography online. Contains direct quotes, the full Ka Trut baptism account, the Japanese occupation scenes (Colonel Amano, the refusal), the leprosy diagnosis, and the return to Di Linh. The essential starting point for English-language research.</p>
+        <a href="http://saigon-vietnam.fr/jean-cassaigne_en.php" target="_blank" rel="noopener" class="source-link">
+          Read article
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Supporting Tribal Lepers — Jean Cassaigne</h3>
+          <span class="source-badge badge-article">English</span>
+        </div>
+        <p class="source-meta">Mercy Charity · mercycharity.net</p>
+        <p class="source-desc">Contains the K'Ho primary source quotes (Ka Trut's dying words, the lepers' forest cry), the tombstone epitaph, the funeral address by the leper community, and additional material from Father Phung Thanh Quang's 1972 book. The best source for the K'Ho linguistic material in English.</p>
+        <div class="source-tags">
+          <span class="source-tag">K'Ho quotes</span>
+          <span class="source-tag">Ka Trut baptism</span>
+          <span class="source-tag">Tombstone text</span>
+        </div>
+        <a href="https://mercycharity.net/supporting-tribal-lepers" target="_blank" rel="noopener" class="source-link">
+          Read article
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">French Missionary's Legacy Lives On Among Vietnam's Lepers</h3>
+          <span class="source-badge badge-article">English</span>
+        </div>
+        <p class="source-meta">UCA News · July 2020</p>
+        <p class="source-desc">English-language news reporting on the living legacy of Cassaigne at Di Linh as the beatification cause advances. Includes photos from the UCA News archive — some of the best quality photographs of Jean with the leper community.</p>
+        <a href="https://www.ucanews.com/news/french-missionarys-legacy-lives-on-among-vietnams-lepers/88702" target="_blank" rel="noopener" class="source-link">
+          UCA News
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Mgr Jean Cassaigne (MEP, 1895–1973) — MEP Official Page</h3>
+          <span class="source-badge badge-article">French</span>
+        </div>
+        <p class="source-meta">missionsetrangeres.com · Missions Étrangères de Paris</p>
+        <p class="source-desc">The official MEP page on Cassaigne. Contains the obituary by Father Fernand Parrel — the primary source for the Colonel Amano sword episode, the "une grâce" response, and the "exempla trahunt" note about Amano's later baptism. The most theologically rich source document.</p>
+        <div class="source-tags">
+          <span class="source-tag">MEP official</span>
+          <span class="source-tag">Amano sword — source</span>
+          <span class="source-tag">"Une grâce" — source</span>
+        </div>
+        <a href="https://missionsetrangeres.com/mgrjean-cassaigne-1895-1973/" target="_blank" rel="noopener" class="source-link">
+          MEP page
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Vatican October 2019 — Missionary Witnesses</h3>
+          <span class="source-badge badge-article">Vatican</span>
+        </div>
+        <p class="source-meta">vatican.va · October 2019 Extraordinary Missionary Month</p>
+        <p class="source-desc">Cassaigne was one of 25 missionary witnesses selected by the Vatican for the Extraordinary Missionary Month (October 2019). The official Vatican document contains his profile and contributed to the Vietnamese bishops' decision to formally open his beatification cause in 2021.</p>
+        <a href="https://www.october2019.va/content/dam/october2019/documenti/testimoni/testimoni-guida/web%20testimoni%20inglese.pdf" target="_blank" rel="noopener" class="source-link">
+          Vatican PDF
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Catholic Hierarchy — Full Biographical Record</h3>
+          <span class="source-badge badge-article">English</span>
+        </div>
+        <p class="source-meta">catholic-hierarchy.org · David M. Cheney</p>
+        <p class="source-desc">Complete dated record of every episcopal event in Cassaigne's life — ordination as deacon (June 6, 1925 — Pentecost Ember Saturday), priestly ordination, episcopal appointment, resignation, and death. The authoritative English reference for dates.</p>
+        <div class="source-tags">
+          <span class="source-tag">Dates / chronology</span>
+          <span class="source-tag">Episcopal record</span>
+        </div>
+        <a href="https://www.catholic-hierarchy.org/bishop/bcassj.html" target="_blank" rel="noopener" class="source-link">
+          Catholic Hierarchy
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Jean Cassaigne — Wikipédia (French)</h3>
+          <span class="source-badge badge-article">French</span>
+        </div>
+        <p class="source-meta">fr.wikipedia.org</p>
+        <p class="source-desc">The French Wikipedia article is substantially more complete than the English version. Contains the letter to his father ("they will not change the man"), his wartime letters, the episcopal consecrators' names, and references to his published linguistic works.</p>
+        <a href="https://fr.wikipedia.org/wiki/Jean_Cassaigne" target="_blank" rel="noopener" class="source-link">
+          Wikipédia (fr)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Groupe Scolaire Jean Cassaigne — Biography</h3>
+          <span class="source-badge badge-article">French</span>
+        </div>
+        <p class="source-meta">gs-cassaigne.fr · School named in his honor, France</p>
+        <p class="source-desc">A French school bears his name. Their biography page offers a concise institutional summary of his life. Confirms the active memory of Cassaigne in his home region (Landes, France).</p>
+        <a href="https://gs-cassaigne.fr/le-mot-du-chef-detablissement/monseigneur-jean-cassaigne/" target="_blank" rel="noopener" class="source-link">
+          Visit page
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Vietnamese Bishops Approve Beatification Cause</h3>
+          <span class="source-badge badge-viet">Vietnamese</span>
+        </div>
+        <p class="source-meta">ubdkcgvn.org.vn · 2021 · Vietnamese Episcopal Conference news</p>
+        <p class="source-desc">Vietnamese-language report on the April 2021 episcopal conference decision: all 27 Vietnamese bishops unanimously approved advancing the beatification cause of Bishop Jean Cassaigne. The formal institutional record of the cause's current status.</p>
+        <a href="http://ubdkcgvn.org.vn/vi/guong-dien-hinh/duc-giam-muc-jean-cassaigne-tong-do-nguoi-cui-o-viet-nam-o81E01785.html" target="_blank" rel="noopener" class="source-link">
+          Read (Vietnamese)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">50th Anniversary — The Ka Trut Baptism Statue</h3>
+          <span class="source-badge badge-viet">Vietnamese</span>
+        </div>
+        <p class="source-meta">cgvdt.vn · October 2023</p>
+        <p class="source-desc">On the 50th anniversary of his death (2023), a commemorative statue was erected depicting Cassaigne baptizing Ka Trut. This article interviews the sculptor and confirms the enduring centrality of the Ka Trut baptism to his memory in Vietnam.</p>
+        <div class="source-tags">
+          <span class="source-tag">Ka Trut baptism</span>
+          <span class="source-tag">50th anniversary</span>
+          <span class="source-tag">2023</span>
+        </div>
+        <a href="https://www.cgvdt.vn/nguoi-thuc-hien-cum-tuong-uc-cha-jean-cassaigne_a17365" target="_blank" rel="noopener" class="source-link">
+          Read (Vietnamese)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARCHIVES -->
+  <section class="sources-section" id="archives">
+    <div class="section-header">
+      <div class="section-icon brown">🗂</div>
+      <div>
+        <h2 class="section-title">Archives (Untranslated / In-Person)</h2>
+        <p class="section-subtitle">Primary archive collections requiring direct contact</p>
+      </div>
+    </div>
+    <div class="source-grid">
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">MEP / IRFA Archives — Paris</h3>
+          <span class="source-badge badge-archive">Archive</span>
+        </div>
+        <p class="source-meta">128 rue du Bac, Paris 7e · Institut de Recherche France-Asie</p>
+        <p class="source-desc">The motherlode. Holds decades of Cassaigne's annual mission <em>Compte-rendus</em> (official reports to MEP, 1926–1955), correspondence in the <em>Bulletin des MEP</em>, articles in <em>Échos de la Rue du Bac</em> across 30+ years, and his missionary personnel file. Almost entirely in French, largely digitized or catalogued but not publicly translated.</p>
+        <div class="source-tags">
+          <span class="source-tag">Annual mission reports</span>
+          <span class="source-tag">Correspondence</span>
+          <span class="source-tag">French only</span>
+          <span class="source-tag">In-person / by appointment</span>
+        </div>
+        <a href="https://irfa.paris/en/missionnaire/3300-cassaigne-jean/" target="_blank" rel="noopener" class="source-link">
+          IRFA catalogue entry
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Diocese of Đà Lạt — Beatification Files</h3>
+          <span class="source-badge badge-archive">Archive</span>
+        </div>
+        <p class="source-meta">Toà Giám Mục Đà Lạt · Lâm Đồng Province, Vietnam</p>
+        <p class="source-desc">The Diocese of Đà Lạt is leading the diocesan inquiry for beatification. Their files include witness testimonies, collected documentation, and the formal ecclesiastical record of the cause. Access requires direct contact with the diocesan postulator.</p>
+        <div class="source-tags">
+          <span class="source-tag">Active beatification files</span>
+          <span class="source-tag">Vietnamese / Latin</span>
+          <span class="source-tag">Restricted access</span>
+        </div>
+      </div>
+
+      <div class="source-card">
+        <div class="source-card-top">
+          <h3 class="source-title">Di Linh Leprosarium — On-site Albums</h3>
+          <span class="source-badge badge-archive">Archive</span>
+        </div>
+        <p class="source-meta">Trung Tâm Điều Trị Phong Di Linh · Bảo Thuận, Di Linh, Lâm Đồng</p>
+        <p class="source-desc">The leprosarium Jean founded is still operating, run by the Daughters of Charity. Multiple sources confirm that photo albums documenting Cassaigne's life and work are held on-site and were shown to researchers who visited. Includes images of Jean caring for patients, building activities, and community life that have not been published online.</p>
+        <div class="source-tags">
+          <span class="source-tag">Still operating</span>
+          <span class="source-tag">Photo albums on-site</span>
+          <span class="source-tag">Daughters of Charity</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-tomb">JEAN CASSAIGNE · 1895–1973 · CARITAS ET AMOR</p>
+    <p class="footer-epitaph">"I ask those who, while alive, I could not help, please forgive me."</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const btn = document.querySelector('[data-theme-toggle]');
+    const root = document.documentElement;
+    let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    root.setAttribute('data-theme', theme);
+    updateIcon();
+    btn && btn.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateIcon();
+    });
+    function updateIcon() {
+      if (!btn) return;
+      btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      btn.innerHTML = theme === 'dark'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+  })();
+</script>
+
+</body>
+</html>

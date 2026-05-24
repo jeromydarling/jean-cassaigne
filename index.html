@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jean Cassaigne — A Life Given Away (1895–1973)</title>
+  <title>Jean Cassaigne — Servant of God (1895–1973)</title>
   <meta name="description" content="Interactive timeline of Bishop Jean Cassaigne MEP — missionary, leper bishop, Servant of God." />
 
   <!-- Fonts -->
@@ -315,6 +315,30 @@
       text-align: center;
       background: var(--color-surface);
       border-bottom: 1px solid var(--color-divider);
+    }
+    .hero-portrait-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: var(--space-8);
+    }
+    .hero-portrait {
+      width: clamp(120px, 18vw, 200px);
+      height: clamp(160px, 24vw, 272px);
+      object-fit: cover;
+      object-position: center top;
+      border-radius: var(--radius-lg);
+      border: 3px solid var(--color-border);
+      box-shadow: var(--shadow-lg), 0 0 0 6px var(--color-surface-2);
+      filter: sepia(0.18) contrast(1.05);
+      transition: filter var(--transition);
+    }
+    [data-theme="dark"] .hero-portrait { filter: sepia(0.05) contrast(1.1) brightness(0.92); }
+    .hero-portrait-caption {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.04em;
+      margin-top: var(--space-2);
     }
     .hero-ornament {
       position: absolute;
@@ -927,6 +951,10 @@
     <rect x="376" y="190" width="48" height="12" rx="3" fill="currentColor" opacity="0.6"/>
   </svg>
 
+  <div class="hero-portrait-wrap">
+    <img class="hero-portrait" src="jean-cassaigne-portrait.jpg" alt="Bishop Jean Cassaigne, MEP (1895–1973)" width="200" height="272" />
+    <p class="hero-portrait-caption">Jean Cassaigne · Grenade-sur-l'Adour, 1895 — Di Linh, 1973</p>
+  </div>
   <p class="hero-eyebrow">Interactive Biography</p>
   <h1 class="hero-title"><em>Jean Cassaigne</em></h1>
   <p class="hero-dates">30 January 1895 — 31 October 1973</p>
@@ -1660,6 +1688,9 @@
       <a href="https://prixjeancassaigne.org" target="_blank" rel="noopener">prixjeancassaigne.org</a> ·
       <a href="https://irfa.paris/en/missionnaire/3300-cassaigne-jean/" target="_blank" rel="noopener">IRFA Paris</a> ·
       <a href="https://hdgmvietnam.com/chi-tiet/chan-dung-linh-muc-viet-nam-duc-cha-jean-cassaigne-18716" target="_blank" rel="noopener">HDGM Vietnam</a>
+    </p>
+    <p style="margin-top: var(--space-4);">
+      <a href="sources.html" style="font-family: var(--font-ui); font-size: var(--text-sm); letter-spacing: 0.04em;">→ Full Sources &amp; Resources page</a>
     </p>
   </div>
 </footer>
